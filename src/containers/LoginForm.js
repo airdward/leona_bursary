@@ -36,7 +36,7 @@ const LoginForm = ({ history }) => {
 
     useEffect(()=>{
         if(authError){
-            //그냥 일단 로그인 실패하면 홈으로 돌아가게 해놓음 로그인 실패 페이지 만들자!
+            
             history.push('/');
             console.log('auth error!');
             console.log(authError);

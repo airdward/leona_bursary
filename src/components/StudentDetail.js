@@ -1,35 +1,34 @@
 import React from 'react'
-import { Container, Row, Col, Button, Badge, Table,  } from 'reactstrap';
+import { Container, Row, Col, Button, Badge, Table } from 'reactstrap';
 import { Link } from "react-router-dom"
 
-
-const StudentDetail = ({ student, loading, scholarId }) =>{
+const StudentDetail = ({ student, loading, scholarId }) => {
     
     if(loading || !student){
         return null;
-      }
-
-    const titleStyle={
-        fontSize:'25px',
-        fontWeight:'bold',
-        margin:'5px',
     }
 
-    const subTitleStyle={
-        fontSize:'20px',
-        margin:'5px',
+    const titleStyle = {
+        fontSize: '25px',
+        fontWeight: 'bold',
+        margin: '5px',
+    }
+
+    const subTitleStyle = {
+        fontSize: '20px',
+        margin: '5px',
     }
 
     return (
-        <Container style={{margin:'20px auto'}}>
-            <Row style={titleStyle}><Badge color="info">학생정보 출력</Badge></Row>
+        <Container style={{margin: '20px auto'}}>
+            <Row style={titleStyle}><Badge color="info">Student Information</Badge></Row>
             <Row>
-            <Table borderless size="sm">
+                <Table borderless size="sm">
                     <thead>
                         <tr>
-                            <th>신청번호 {student.id}</th>
-                            <th>{student.name} 학생</th>
-                            <th>{student.city} 학교</th>
+                            <th>Application Number {student.id}</th>
+                            <th>{student.name} Student</th>
+                            <th>{student.city} School</th>
                             <th>{student.zipcode}/4.3</th>
                             <th>{student.phone}</th>
                         </tr>
@@ -37,44 +36,44 @@ const StudentDetail = ({ student, loading, scholarId }) =>{
                 </Table>
             </Row>
             <br/><br/>
-            <Row style={titleStyle}><Badge color="info">장학금 신청 및 수혜내역</Badge></Row>
+            <Row style={titleStyle}><Badge color="info">Scholarship Application and Benefit History</Badge></Row>
             <Row>
                 <Table size="sm">
                     <thead>
                         <tr>
                             <th> </th>
-                            <th>장학금명</th>
-                            <th>상태</th>
-                            <th>지급 일시</th>
-                            <th>지급 금액(원)</th>
+                            <th>Scholarship Name</th>
+                            <th>Status</th>
+                            <th>Payment Date</th>
+                            <th>Payment Amount (KRW)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>A장학금</td>
-                            <td>지급 완료</td>
+                            <td>A Scholarship</td>
+                            <td>Payment Completed</td>
                             <td>2019-09-18</td>
                             <td>300,000</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>B장학금</td>
-                            <td>지급 완료</td>
+                            <td>B Scholarship</td>
+                            <td>Payment Completed</td>
                             <td>2019-10-28</td>
                             <td>2,000,000</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>C장학금</td>
-                            <td>반려</td>
+                            <td>C Scholarship</td>
+                            <td>Returned</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
-                            <td>D장학금</td>
-                            <td>신청완료</td>
+                            <td>D Scholarship</td>
+                            <td>Application Completed</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -82,7 +81,7 @@ const StudentDetail = ({ student, loading, scholarId }) =>{
                 </Table>
             </Row>
             <br/>
-            <Link to={`/selections/${scholarId}`}><Button>목록으로</Button></Link>
+            <Link to={`/selections/${scholarId}`}><Button>Back to List</Button></Link>
         </Container>
     )
 }

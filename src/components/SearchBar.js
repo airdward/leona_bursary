@@ -28,49 +28,49 @@ const SearchBar = ({ onChange, onDropChange, type, onSemesterChange }) => {
         margin:'5px',
     }
 
-    const ButtonStyle={
+    const ButtonStyle = {
         padding:'5px',
     }
 
-    if(type==="notice"){
+    if(type === "notice"){
         return(
             <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
-                <Input style={onlysearchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
+                <Input style={onlysearchBoxStyle} type="text" onChange={onChange} placeholder="Enter search term"></Input>
             </Row>
         </div>
         )
     }
-    else if(type==="scholar"){
+    else if(type === "scholar"){
         return(
             <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
-                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
-                <Input style={semesterBoxStyle} type="text" onChange={onSemesterChange} placeholder="학기를 입력하세요"></Input>
+                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="Enter search term"></Input>
+                <Input style={semesterBoxStyle} type="text" onChange={onSemesterChange} placeholder="Enter semester"></Input>
             </Row>
         </div>
         )
     }
-    else if(type==="addScholar"){
+    else if(type === "addScholar"){
         return(
             <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
-                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
-                <Link to={'/scholarships/new'}><Button color="success" style={{margin:'5px'}}>등록</Button></Link>
+                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="Enter search term"></Input>
+                <Link to={'/scholarships/new'}><Button color="success" style={{margin:'5px'}}>Register</Button></Link>
             </Row>
         </div>
         )
     }
 
-    else if(type==="student"){
+    else if(type === "student"){
         return(
             <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
-                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
+                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="Enter search term"></Input>
             </Row>
         </div>
         )
@@ -79,12 +79,12 @@ const SearchBar = ({ onChange, onDropChange, type, onSemesterChange }) => {
         <div style={containerStyle}>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <Row>
-                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="검색어를 입력하세요"></Input>
+                <Input style={searchBoxStyle} type="text" onChange={onChange} placeholder="Enter search term"></Input>
                 <Dropdown isOpen={dropdownOpen} toggle={toggle} style={ButtonStyle}>
-                <DropdownToggle caret >정렬기준</DropdownToggle>
+                <DropdownToggle caret>Sort by</DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem name="grade" onClick={onDropChange}>학점</DropdownItem>
-                    <DropdownItem name="semester" onClick={onDropChange}>이수학기</DropdownItem>
+                    <DropdownItem name="grade" onClick={onDropChange}>Grade</DropdownItem>
+                    <DropdownItem name="semester" onClick={onDropChange}>Completed Semester</DropdownItem>
                 </DropdownMenu>
                 </Dropdown>
             </Row>
@@ -100,4 +100,3 @@ const Appcontainer = styled.div`
         box-sizing: border-box;
     }
 `;
-

@@ -13,25 +13,26 @@ const Main = ()=>{
     width:'50px',
     height:'50px',
   }
-  return(
+  return (
     <div className="img">
     
-      <div style={{textalign: 'left', position: 'relative', left: '250px', top: '100px' }}>
-      <hr style={{ textalign: 'left', width: '130px',border: '3px solid black', marginLeft: '0px'}}></hr>
-      <h2><strong>장학금통합관리시스템</strong></h2>
-      <h7>온라인 장학금통합관리시스템에 오신 것을 환영합니다.<br/>편리하게 장학금 정보를 얻고 빠르게 신청해보세요!
-    </h7></div>
-    <br/><br/><br/>
-    <div className="content">
-      <div className="row"></div>
-      <Link to="/addScholar"><Button className="RegisterMainButton" size="lg">장학금등록<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-      <Link to="/selections"><Button className="RegisterMainButton" size="lg" color="warning">장학생선발<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-      <Link to="/main"><Button className="RegisterMainButton" size="lg" color="info">사이트 이용안내<br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
-      <Link to="/"><Button className="RegisterMainButton" size="lg" color="success">학생용 페이지 이동<br/><AiOutlineBank style={iconStyle}/></Button></Link>
+      <div style={{textAlign: 'left', position: 'relative', left: '250px', top: '100px' }}>
+      <hr style={{ textAlign: 'left', width: '130px', border: '3px solid black', marginLeft: '0px'}}></hr>
+      <h2><strong>Scholarship Integrated Management System</strong></h2>
+      <h7>Welcome to the Online Bursary Award System.<br/>Conveniently obtain scholarship information and apply quickly!</h7>
+      </div>
+      <br/><br/><br/>
+      <div className="content">
+        <div className="row"></div>
+        <Link to="/addScholar"><Button className="RegisterMainButton" size="lg">Scholarship Registration<br/><GiNewspaper style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/selections"><Button className="RegisterMainButton" size="lg" color="warning">Scholarship Recipient Selection<br/><FaSearch style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/main"><Button className="RegisterMainButton" size="lg" color="info">Site Usage Guide<br/><GoQuestion style={iconStyle}/></Button></Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/"><Button className="RegisterMainButton" size="lg" color="success">Move to Student Page<br/><AiOutlineBank style={iconStyle}/></Button></Link>
+      </div>
     </div>
+);
    
-    </div>
-  );
+   
 }
 
 export default Main;

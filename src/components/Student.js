@@ -25,7 +25,7 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
       }
     }
 
-    // isSelect는 student안의 어떤 값 읽어오겠찌??
+    // isSelect will read some value from student, right?
     const isSelect = (student.id%2 ===0)
   
       return [
@@ -35,21 +35,21 @@ const Student = ({ key, index, student, onChange, scholarId, onSelect }) => {
           <td>{student.name}</td>
           <td><Button onClick={modalToggle} type='button' 
               style={isSelect? {backgroundColor:"#0B7527", border:"none"}:{backgroundColor:"#941216", border:"none"}}>
-                {isSelect? "선발하기":"선발취소" }</Button></td>
+                {isSelect? "Select":"Cancel Selection" }</Button></td>
           <Modal isOpen={modal} toggle={modalToggle}>
-            <ModalHeader toggle={modalToggle}>정말요??</ModalHeader>
+            <ModalHeader toggle={modalToggle}>Are you sure?</ModalHeader>
             <ModalBody>
               {
                 isSelect? 
-                `${student.name} 학생을 선발하시겠습니까?`:`${student.name} 학생을 선발 취소 하시겠습니까?`
+                `Do you want to select student ${student.name}?`:`Do you want to cancel the selection of student ${student.name}?`
               }
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={selectToggle} name={student.id}>확인</Button>{' '}
-              <Button color="secondary" onClick={modalToggle}>취소</Button>
+              <Button color="primary" onClick={selectToggle} name={student.id}>Confirm</Button>{' '}
+              <Button color="secondary" onClick={modalToggle}>Cancel</Button>
             </ModalFooter>
           </Modal>
-          <td><Link to={`/students/${student.id}/${scholarId}`}><Button>자세히보기</Button></Link></td>
+          <td><Link to={`/students/${student.id}/${scholarId}`}><Button>View Details</Button></Link></td>
         </tr>,
       ];
   }
